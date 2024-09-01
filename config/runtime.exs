@@ -37,7 +37,7 @@ end
 #
 # Alternatively, you can use `mix phx.gen.release` to generate a `bin/server`
 # script that automatically sets the env var above.
-if RuntimeConfig.get_env("PHX_SERVER", cast: :boolean) do
+if RuntimeConfig.get("PHX_SERVER", cast: :boolean) do
   config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint, server: true
 end
 
