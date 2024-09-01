@@ -62,7 +62,7 @@ secret_key_base = RuntimeConfig.get("SECRET_KEY_BASE")
 host = RuntimeConfig.get("PHX_HOST")
 port = RuntimeConfig.get("PORT", cast: :integer)
 
-config :elixir_configs_example, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
+config :elixir_configs_example, :dns_cluster_query, RuntimeConfig.get("DNS_CLUSTER_QUERY")
 
 config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint,
   url: [host: host, port: 443, scheme: "https"],
