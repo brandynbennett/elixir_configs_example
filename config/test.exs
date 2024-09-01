@@ -17,8 +17,7 @@ config :elixir_configs_example, ElixirConfigsExample.Repo,
 # you can enable the server option below.
 config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "V9vvmRfG6jGUGD+AE/O519fjsqF6+PAIVsX7go+QyHBzSCOcpCA6+S7zv+5/X1O3",
-  server: false
+  secret_key_base: "V9vvmRfG6jGUGD+AE/O519fjsqF6+PAIVsX7go+QyHBzSCOcpCA6+S7zv+5/X1O3"
 
 # In test we don't send emails
 config :elixir_configs_example, ElixirConfigsExample.Mailer, adapter: Swoosh.Adapters.Test
