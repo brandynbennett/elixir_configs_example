@@ -12,7 +12,7 @@ defmodule RuntimeConfig do
 
   @impl Shared.RuntimeConfig
   def defaults do
-    %{}
+    %{"PHX_SERVER" => [test: "false", dev: "false"]}
   end
 end
 
@@ -25,7 +25,7 @@ end
 #
 # Alternatively, you can use `mix phx.gen.release` to generate a `bin/server`
 # script that automatically sets the env var above.
-if System.get_env("PHX_SERVER") do
+if RuntimeConfig.get_env("PHX_SERVER", cast: :boolean) do
   config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint, server: true
 end
 
