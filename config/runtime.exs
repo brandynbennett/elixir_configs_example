@@ -10,6 +10,9 @@ import Config
 defmodule RuntimeConfig do
   use Shared.RuntimeConfig
 
+  @dev_secret_key_base "uMTyT9IJXnOqKwB9o+Gw57mJJAW74G0XddKdKbDLX34KCnj2TTIxFeqnJm9F8gGE"
+  @test_secret_key_base "V9vvmRfG6jGUGD+AE/O519fjsqF6+PAIVsX7go+QyHBzSCOcpCA6+S7zv+5/X1O3"
+
   @impl Shared.RuntimeConfig
   def defaults do
     %{
@@ -17,6 +20,7 @@ defmodule RuntimeConfig do
       "ECTO_IPV6" => [test: "false", dev: "false", prod: "false"],
       "PHX_SERVER" => [test: "false", dev: "false"],
       "POOL_SIZE" => [test: System.schedulers_online() * 2, dev: "10", prod: "10"],
+      "SECRET_KEY_BASE" => [dev: @dev_secret_key_base, test: @test_secret_key_base]
     }
   end
 end
