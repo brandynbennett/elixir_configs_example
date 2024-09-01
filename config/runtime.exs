@@ -59,7 +59,7 @@ config :elixir_configs_example, ElixirConfigsExample.Repo,
 secret_key_base = RuntimeConfig.get("SECRET_KEY_BASE")
 
 host = RuntimeConfig.get("PHX_HOST")
-port = String.to_integer(System.get_env("PORT") || "4000")
+port = RuntimeConfig.get("PORT", cast: :integer)
 
 config :elixir_configs_example, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
