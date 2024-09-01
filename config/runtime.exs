@@ -32,12 +32,7 @@ if RuntimeConfig.get_env("PHX_SERVER", cast: :boolean) do
   config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint, server: true
 end
 
-database_url =
-  System.get_env("DATABASE_URL") ||
-    raise """
-    environment variable DATABASE_URL is missing.
-    For example: ecto://USER:PASS@HOST/DATABASE
-    """
+database_url = RuntimeConfig.get("DATABASE_URL")
 
 maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
