@@ -13,9 +13,9 @@ defmodule RuntimeConfig do
   @impl Shared.RuntimeConfig
   def defaults do
     %{
-      "PHX_SERVER" => [test: "false", dev: "false"],
       "DATABASE_URL" => [test: nil, dev: nil],
-      "ECTO_IPV6" => [test: "false", dev: "false", prod: "false"]
+      "ECTO_IPV6" => [test: "false", dev: "false", prod: "false"],
+      "PHX_SERVER" => [test: "false", dev: "false"]
     }
   end
 end
