@@ -12,7 +12,10 @@ defmodule RuntimeConfig do
 
   @impl Shared.RuntimeConfig
   def defaults do
-    %{"PHX_SERVER" => [test: "false", dev: "false"]}
+    %{
+      "PHX_SERVER" => [test: "false", dev: "false"],
+      "DATABASE_URL" => [test: nil, dev: nil]
+    }
   end
 end
 
