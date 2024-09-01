@@ -14,7 +14,8 @@ defmodule RuntimeConfig do
   def defaults do
     %{
       "PHX_SERVER" => [test: "false", dev: "false"],
-      "DATABASE_URL" => [test: nil, dev: nil]
+      "DATABASE_URL" => [test: nil, dev: nil],
+      "ECTO_IPV6" => [test: "false", dev: "false", prod: "false"]
     }
   end
 end
