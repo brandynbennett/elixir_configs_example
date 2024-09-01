@@ -7,6 +7,15 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 
+defmodule RuntimeConfig do
+  use Shared.RuntimeConfig
+
+  @impl Shared.RuntimeConfig
+  def defaults do
+    %{}
+  end
+end
+
 # ## Using releases
 #
 # If you use `mix release`, you need to explicitly enable the server
