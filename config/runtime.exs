@@ -35,7 +35,8 @@ end
 
 database_url = RuntimeConfig.get("DATABASE_URL")
 
-maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
+maybe_ipv6 =
+  if RuntimeConfig.get("ECTO_IPV6", cast: :boolean), do: [:inet6], else: []
 
 config :elixir_configs_example, ElixirConfigsExample.Repo,
   # ssl: true,
