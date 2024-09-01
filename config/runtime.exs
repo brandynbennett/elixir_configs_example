@@ -17,6 +17,7 @@ defmodule RuntimeConfig do
   def defaults do
     %{
       "DATABASE_URL" => [test: nil, dev: nil],
+      "DNS_CLUSTER_QUERY" => [test: nil, dev: nil, prod: nil],
       "ECTO_IPV6" => [test: "false", dev: "false", prod: "false"],
       "PHX_HOST" => [test: "example.com", dev: "example.com"],
       "PHX_SERVER" => [test: "false", dev: "false"],
