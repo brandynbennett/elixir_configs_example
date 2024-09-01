@@ -22,7 +22,6 @@ config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "uMTyT9IJXnOqKwB9o+Gw57mJJAW74G0XddKdKbDLX34KCnj2TTIxFeqnJm9F8gGE",
   watchers: [
     esbuild:
       {Esbuild, :install_and_run, [:elixir_configs_example, ~w(--sourcemap=inline --watch)]},
