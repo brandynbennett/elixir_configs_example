@@ -15,7 +15,8 @@ defmodule RuntimeConfig do
     %{
       "DATABASE_URL" => [test: nil, dev: nil],
       "ECTO_IPV6" => [test: "false", dev: "false", prod: "false"],
-      "PHX_SERVER" => [test: "false", dev: "false"]
+      "PHX_SERVER" => [test: "false", dev: "false"],
+      "POOL_SIZE" => [test: "10", dev: "10", prod: "10"]
     }
   end
 end
