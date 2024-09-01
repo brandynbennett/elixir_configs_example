@@ -21,6 +21,7 @@ defmodule RuntimeConfig do
       "PHX_HOST" => [test: "example.com", dev: "example.com"],
       "PHX_SERVER" => [test: "false", dev: "false"],
       "POOL_SIZE" => [test: System.schedulers_online() * 2, dev: "10", prod: "10"],
+      "PORT" => [test: "4000", dev: "4000"],
       "SECRET_KEY_BASE" => [dev: @dev_secret_key_base, test: @test_secret_key_base]
     }
   end
