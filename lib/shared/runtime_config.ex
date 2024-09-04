@@ -93,12 +93,10 @@ defmodule Shared.RuntimeConfig do
   end
 
   defp env_default(envvar, defaults, env) do
-    case Keyword.get(defaults, env) do
-      nil ->
-        raise("environment variable #{envvar} not set and no default for #{inspect(env)}")
-
-      value ->
-        value
+    if Keyword.has_key?(defaults, env) do
+      Keyword.get(defaults, env)
+    else
+      raise("environment variable #{envvar} not set and no default for #{inspect(env)}")
     end
   end
 end
