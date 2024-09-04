@@ -7,17 +7,6 @@
 # General application configuration
 import Config
 
-# Configures the endpoint
-config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint,
-  url: [host: "localhost"],
-  adapter: Bandit.PhoenixAdapter,
-  render_errors: [
-    formats: [html: ElixirConfigsExampleWeb.ErrorHTML, json: ElixirConfigsExampleWeb.ErrorJSON],
-    layout: false
-  ],
-  pubsub_server: ElixirConfigsExample.PubSub,
-  live_view: [signing_salt: "y5U/MUPh"]
-
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
@@ -58,6 +47,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 import_config "compile/database.exs"
+import_config "compile/endpoint.exs"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
