@@ -20,3 +20,12 @@ if config_env() == :dev do
     # Enable helpful, but potentially expensive runtime checks
     enable_expensive_runtime_checks: true
 end
+
+if config_env() == :test do
+  # Initialize plugs at runtime for faster test compilation
+  config :phoenix, :plug_init_mode, :runtime
+
+  # Enable helpful, but potentially expensive runtime checks
+  config :phoenix_live_view,
+    enable_expensive_runtime_checks: true
+end
