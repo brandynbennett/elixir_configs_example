@@ -7,17 +7,13 @@
 # General application configuration
 import Config
 
-# Configures Elixir's Logger
-config :logger, :console,
-  format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
-
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
 import_config "compile/assets.exs"
 import_config "compile/database.exs"
 import_config "compile/endpoint.exs"
+import_config "compile/logger.exs"
 import_config "compile/mailer.exs"
 
 # Import environment specific config. This must remain at the bottom
