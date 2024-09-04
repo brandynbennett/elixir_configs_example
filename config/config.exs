@@ -7,15 +7,6 @@
 # General application configuration
 import Config
 
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :elixir_configs_example, ElixirConfigsExample.Mailer, adapter: Swoosh.Adapters.Local
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -27,6 +18,7 @@ config :phoenix, :json_library, Jason
 import_config "compile/assets.exs"
 import_config "compile/database.exs"
 import_config "compile/endpoint.exs"
+import_config "compile/mailer.exs"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
