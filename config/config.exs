@@ -7,10 +7,6 @@
 # General application configuration
 import Config
 
-config :elixir_configs_example,
-  ecto_repos: [ElixirConfigsExample.Repo],
-  generators: [timestamp_type: :utc_datetime]
-
 # Configures the endpoint
 config :elixir_configs_example, ElixirConfigsExampleWeb.Endpoint,
   url: [host: "localhost"],
@@ -60,6 +56,8 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+import_config "compile/database.exs"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
