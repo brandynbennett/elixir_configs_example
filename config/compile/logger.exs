@@ -14,3 +14,8 @@ if config_env() == :test do
   # Print only warnings and errors during test
   config :logger, level: :warning
 end
+
+if config_env() == :prod do
+  # Do not print debug messages in production
+  config :logger, level: :info
+end
