@@ -1,14 +1,5 @@
 import Config
 
-# Configure your database
-config :elixir_configs_example, ElixirConfigsExample.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "elixir_configs_example_dev",
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
