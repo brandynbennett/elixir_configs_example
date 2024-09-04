@@ -21,3 +21,11 @@ if config_env() == :test do
   # Disable swoosh api client as it is only required for production adapters
   config :swoosh, :api_client, false
 end
+
+if config_env() == :prod do
+  # Configures Swoosh API Client
+  config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: ElixirConfigsExample.Finch
+
+  # Disable Swoosh Local Memory Storage
+  config :swoosh, local: false
+end
