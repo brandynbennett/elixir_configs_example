@@ -21,3 +21,5 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 A change on downstream branch
 Another change on downstream branch
+
+Second set of downstream changes for merge test
